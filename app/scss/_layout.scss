@@ -1,0 +1,11 @@
+.container {
+  background-color: white;
+}
+
+.navbar-column {
+  @include make-sm-column(2);
+}
+
+.main-column {
+  @include make-sm-column(10);
+}

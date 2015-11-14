@@ -1,0 +1,7 @@
+.created-on-column {
+  @include make-sm-column(3);
+}
+
+.creator-column {
+   @include make-sm-column(3);
+}

@@ -1,0 +1,14 @@
+<h3>{{ctrl.post.subject}}</h3>
+<div>{{ctrl.post.text}}</div>
+
+<!-- TODO: doesn't this look a bit too familiar from post-list.html? -->
+<div class="row">
+  <div class="created-on-column" ng-show="ctrl.post.createdOn">
+    <i class="fa fa-clock-o"></i>
+    {{ctrl.post.createdOn | date}}
+  </div>
+  <div class="creator-column" ng-show="ctrl.post.creator">
+    <i class="fa fa-user"></i>
+    {{ctrl.post.creator}}
+  </div>
+</div>

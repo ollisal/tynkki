@@ -10,7 +10,8 @@
     'ui.bootstrap',
 
     // view modules
-    'tynkki.postList'
+    'tynkki.postList',
+    'tynkki.post'
   ]);
 
   // Configure ui-router to go to the all posts list view by default
@@ -81,6 +82,7 @@
       ],
       other: [
         {
+          id: 'majavakisa',
           subject: 'Majavakisa neliöt klo 9.30',
           createdOn: '2015-11-10 17:14:34',
           creator: 'jk',
@@ -88,6 +90,7 @@
           pizzas: []
         },
         {
+          id: 'liikuntakyydit',
           subject: 'Venttien liikuntakyydit ke 11.11.',
           createdOn: '2015-11-10 15:01:04',
           creator: 'Timo p',
@@ -95,6 +98,7 @@
           pizzas: []
         },
         {
+          id: 'pyykkikone-rikki',
           subject: 'Kuivausrummun alapuolella oleva pyykinpesukone rikki',
           createdOn: '2015-11-10 14:57:01',
           creator: 'Timo p',
@@ -102,6 +106,7 @@
           pizzas: []
         },
         {
+          id: 'amazon',
           subject: 'Amazon.de - kimppatilaus',
           createdOn: '2015-11-10 17:14:34',
           creator: 'Joksu ja Poksu',

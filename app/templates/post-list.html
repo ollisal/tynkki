@@ -1,5 +1,10 @@
 <div ng-repeat="post in allPosts.posts">
-  <h3>{{post.subject}}</h3>
+  <h3>
+    <a ui-sref="post({id: post.id})">
+      {{post.subject}}
+    </a>
+  </h3>
+
   <div class="well">{{post.text}}</div>
 
   <div class="row">

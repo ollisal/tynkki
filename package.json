@@ -13,8 +13,10 @@
     "angular-ui-bootstrap": "^0.14.3",
     "angular-ui-router": "^0.2.15",
     "bootstrap-sass": "^3.3.5",
+    "express": "^4.13.3",
     "font-awesome": "^4.4.0",
     "gulp": "^3.9.0",
+    "gulp-live-server": "0.0.29",
     "gulp-sass": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0"
   }

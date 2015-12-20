@@ -10,6 +10,7 @@
 
   <!-- Application JavaScript -->
   <script src="js/tynkki.js"></script>
+  <script src="js/side-nav-link.directive.js"></script>
   <script src="js/post-list.js"></script>
   <script src="js/post.js"></script>
   <script src="js/pizza-list.directive.js"></script>
@@ -34,56 +35,13 @@
         </h5>
       </a>
 
-      <!-- TODO: copypaste - what could we do? -->
       <ul class="nav nav-pills nav-stacked">
-        <li class="text-center">
-          <a ui-sref="post({id: 'schedule'})">
-            <div>
-              <i class="fa fa-book fa-3x"></i>
-            </div>
-            Lukujärjestys
-          </a>
-        </li>
-        <li class="text-center">
-          <a ui-sref="post({id: 'people'})">
-            <div>
-              <i class="fa fa-user-secret fa-3x"></i>
-            </div>
-            Ihmiset
-          </a>
-        </li>
-        <li class="text-center">
-          <a ui-sref="post({id: 'network'})">
-            <div>
-              <i class="fa fa-laptop fa-3x"></i>
-            </div>
-            Verkko
-          </a>
-        </li>
-        <li class="text-center">
-          <a ui-sref="post({id: 'laundry'})">
-            <div>
-              <i class="fa fa-trash fa-3x"></i>
-            </div>
-            Pyykit
-          </a>
-        </li>
-        <li class="text-center">
-          <a ui-sref="post({id: 'baywatch'})">
-            <div>
-              <i class="fa fa-video-camera fa-3x"></i>
-            </div>
-            Uimavalvojat
-          </a>
-        </li>
-        <li class="text-center">
-          <a ui-sref="post({id: 'links'})">
-            <div>
-              <i class="fa fa-external-link fa-3x"></i>
-            </div>
-            Linkit
-          </a>
-        </li>
+        <tynkki-side-nav-link post-id="schedule" text="Lukujärjestys" icon="fa-book"></tynkki-side-nav-link>
+        <tynkki-side-nav-link post-id="people" text="Ihmiset" icon="fa-user-secret"></tynkki-side-nav-link>
+        <tynkki-side-nav-link post-id="network" text="Verkko" icon="fa-laptop"></tynkki-side-nav-link>
+        <tynkki-side-nav-link post-id="laundry" text="Pyykit" icon="fa-trash"></tynkki-side-nav-link>
+        <tynkki-side-nav-link post-id="baywatch" text="Uimavalvojat" icon="fa-video-camera"></tynkki-side-nav-link>
+        <tynkki-side-nav-link post-id="links" text="Linkit" icon="fa-external-link"></tynkki-side-nav-link>
       </ul>
     </div>
 

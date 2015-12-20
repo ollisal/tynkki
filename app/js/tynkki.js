@@ -11,7 +11,10 @@
 
     // view modules
     'tynkki.postList',
-    'tynkki.post'
+    'tynkki.post',
+
+    // used directives
+    'tynkki.directives.sideNavLink'
   ]);
 
   // Configure ui-router to go to the all posts list view by default

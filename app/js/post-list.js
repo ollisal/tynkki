@@ -4,7 +4,9 @@
   /**
    * Module implementing the listing of all posts in the front page.
    */
-  var m = angular.module('tynkki.postList', []);
+  var m = angular.module('tynkki.postList', [
+    'tynkki.services.posts'
+  ]);
 
   // Set up the state with ui-router.
   m.config(function ($stateProvider) {

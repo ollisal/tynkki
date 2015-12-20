@@ -5,6 +5,7 @@
    * Module implementing viewing and editing a single post.
    */
   var m = angular.module('tynkki.post', [
+    'tynkki.services.posts',
     'tynkki.directives.pizzaList'
   ]);
 

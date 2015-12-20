@@ -12,6 +12,7 @@
 <button class="btn btn-primary"
         ng-click="list.addNewItem(); list.deleteSelectedItems();"
         ng-disabled="!list.newItemText && list.noItemsSelected()">
-  <!-- TODO: could we make this text change according to whether we have a new item or something selected for deletion? -->
-  Lisää/poista pitsoja
+  <span ng-show="list.newItemText && list.noItemsSelected()">Lisää pitsa</span>
+  <span ng-show="!list.newItemText && !list.noItemsSelected()">Poista valitut pitsat</span>
+  <span ng-show="!!list.newItemText != list.noItemsSelected()">Lisää/poista pitsoja</span>
 </button>

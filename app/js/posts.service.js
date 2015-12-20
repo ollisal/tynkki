@@ -61,7 +61,9 @@
           id: 'links',
           subject: 'Linkit',
           text: 'Alla linkkejä laadukkaisiin Angular-tutoriaaleihin:',
-          pizzas: [/* TODO enable links */]
+          pizzas: [
+            { text: 'http://wiki.paivola.fi/wiki/Angular_%2B_Bootstrap#Palvelu_pois_tynkki.js:.C3.A4.C3.A4_sotkemasta' }
+          ]
         }
       ],
       other: [

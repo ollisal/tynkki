@@ -1,7 +1,7 @@
 <ul>
   <li class="existing-item" ng-repeat="item in list.items">
     <input type="checkbox" ng-model="isSelected" ng-change="list.itemIsNowSelected(item, isSelected)">
-    {{item.text}}
+    <span linkify>{{item.text}}</span>
   </li>
 
   <li class="new-item">

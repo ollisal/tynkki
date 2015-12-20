@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.4.7",
+    "angular-linkify": "^1.2.0",
     "angular-ui-bootstrap": "^0.14.3",
     "angular-ui-router": "^0.2.15",
     "bootstrap-sass": "^3.3.5",

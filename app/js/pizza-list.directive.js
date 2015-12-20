@@ -4,7 +4,9 @@
   /**
    * Directive for showing an editable list.
    */
-  var m = angular.module('tynkki.directives.pizzaList', []);
+  var m = angular.module('tynkki.directives.pizzaList', [
+    'linkify'
+  ]);
 
   m.directive('tynkkiPizzaList', function () {
     return {

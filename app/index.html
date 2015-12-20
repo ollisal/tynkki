@@ -5,9 +5,11 @@
   <!-- Library JavaScript -->
   <script src="../node_modules/angular/angular.js"></script>
   <script src="../node_modules/angular-ui-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="../node_modules/angular-ui-router/build/angular-ui-router.js"></script>
 
   <!-- Application JavaScript -->
   <script src="js/tynkki.js"></script>
+  <script src="js/post-list.js"></script>
 
   <!-- Application stylesheet -->
   <link rel="stylesheet" type="text/css" href="build/tynkki.css">
@@ -82,28 +84,32 @@
       </ul>
     </div>
 
-    <!-- Main content -->
-    <div class="main-column" ng-controller="AllPostsController as allPosts">
-      <div ng-repeat="post in allPosts.posts">
-        <h3>{{post.subject}}</h3>
-        <div class="well">{{post.text}}</div>
-
-        <div class="row">
-          <div class="created-on-column">
-            <i class="fa fa-clock-o"></i>
-            {{post.createdOn | date}}
-          </div>
-          <div class="creator-column">
-            <i class="fa fa-user"></i>
-            {{post.creator}}
-          </div>
-        </div>
-
-        <hr ng-hide="$last">
-      </div>
-    </div>
+    <!-- Main content, ui-router will populate the view here depending on the state -->
+    <ui-view class="main-column">
+    </ui-view>
   </div>
 </div>
+
+<!-- FIXME we want this in a separate file but that requires a HTTP server if we want to avoid html2js in the build system -->
+<script type="text/ng-template" id="templates/post-list.html">
+  <div ng-repeat="post in allPosts.posts">
+    <h3>{{post.subject}}</h3>
+    <div class="well">{{post.text}}</div>
+
+    <div class="row">
+      <div class="created-on-column">
+        <i class="fa fa-clock-o"></i>
+        {{post.createdOn | date}}
+      </div>
+      <div class="creator-column">
+        <i class="fa fa-user"></i>
+        {{post.creator}}
+      </div>
+    </div>
+
+    <hr ng-hide="$last">
+  </div>
+</script>
 
 </body>
 

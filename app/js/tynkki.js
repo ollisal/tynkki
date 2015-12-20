@@ -5,8 +5,18 @@
    * Application main module.
    */
   var m = angular.module('tynkki', [
-    'ui.bootstrap'
+    // library dependencies
+    'ui.router',
+    'ui.bootstrap',
+
+    // view modules
+    'tynkki.postList'
   ]);
+
+  // Configure ui-router to go to the all posts list view by default
+  m.config(function ($urlRouterProvider) {
+    $urlRouterProvider.otherwise('/postList');
+  });
 
   m.controller('AllPostsController', function (tynkkiPosts) {
     this.posts = tynkkiPosts.other;

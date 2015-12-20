@@ -1,8 +1,9 @@
 <li class="text-center" ui-sref-active="active">
   <a ui-sref="post({id: '{{link.postId}}'})">
-    <div>
+    <div class="hidden-xs">
       <i class="fa {{link.icon}} fa-3x"></i>
     </div>
+    <i class="visible-xs-inline fa fa-lg {{link.icon}}"></i>
     {{link.text}}
   </a>
 </li>

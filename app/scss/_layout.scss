@@ -3,9 +3,11 @@
 }
 
 .navbar-column {
-  @include make-sm-column(2);
+  @include make-sm-column(3);
+  @include make-md-column(2);
 }
 
 .main-column {
-  @include make-sm-column(10);
+  @include make-sm-column(9);
+  @include make-md-column(10);
 }

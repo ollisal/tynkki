@@ -1,7 +1,11 @@
 .created-on-column {
-  @include make-sm-column(3);
+  @include make-xs-column(6);
+  @include make-sm-column(4);
+  @include make-md-column(3);
 }
 
 .creator-column {
-   @include make-sm-column(3);
+  @include make-xs-column(6);
+  @include make-sm-column(8);
+  @include make-md-column(9);
 }

@@ -19,10 +19,6 @@
     $urlRouterProvider.otherwise('/postList');
   });
 
-  m.controller('AllPostsController', function (tynkkiPosts) {
-    this.posts = tynkkiPosts.other;
-  });
-
   // TODO: this makes the file very long. Could we move it somewhere else?
   // And why do we have a copy of the data in our own app in the first place?
   m.factory('tynkkiPosts', function () {

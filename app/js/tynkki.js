@@ -38,11 +38,12 @@
             { text: '23.11.-29.11. CS: Filtterit, lisää direktiiveistä' },
             { text: '30.11.-6.12. CS: Lomakkeet' },
             { text: '7.12.-13.12. CS: Itse tehdyt direktiivit ja perusteet palveluista' },
-            { text: '14.12.-21.12. Tynkki: Tutustuminen ja refaktorointi + Bootstrap + ui-router + Protractor' },
+            { text: '14.12.-21.12. Tynkki: Harrasta odottelua että Olli ehtii laatia Tynkki-pohjan ja harkat' },
             { text: '21.12.-10.1. Joululoma' },
-            { text: '11.1.-17.1. Tynkki: Promiset tarkemmin, $resource, direktiivien kommunikaatio' },
-            { text: '18.1.-24.1. Harkkatyön tekoa' },
-            { text: '25.1.2016 Harkkatyön DL' }
+            { text: '11.1.-17.1. Tynkki: Tutustuminen ja refaktorointi + ui-router esittely + Bootstrap' },
+            { text: '18.1.-24.1. Tynkki: Lisää ui-routerista + Promiset tarkemmin + $resource' },
+            { text: '25.1.-31.1. Harkkatyön tekoa' },
+            { text: '1.2.2016 Harkkatyön DL' }
           ]
         },
         {
@@ -71,7 +72,9 @@
           id: 'baywatch',
           subject: 'Uimavalvojat',
           text: 'Uimavalvonta on tärkeää. Joka saunavuorolla tulee olla nimetty uimavalvoja. Nimetyt valvojat vuodesta 2006 alla:',
-          pizzas: []
+          pizzas: [
+            { text: '24.12.2015 - Joulupukki' }
+          ]
         },
         {
           id: 'links',

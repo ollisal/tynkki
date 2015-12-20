@@ -4,7 +4,9 @@
   /**
    * Module implementing viewing and editing a single post.
    */
-  var m = angular.module('tynkki.post', []);
+  var m = angular.module('tynkki.post', [
+    'tynkki.directives.pizzaList'
+  ]);
 
   // Set up the state with ui-router.
   m.config(function ($stateProvider) {

@@ -1,0 +1,17 @@
+<ul>
+  <li class="existing-item" ng-repeat="item in list.items">
+    <input type="checkbox" ng-model="isSelected" ng-change="list.itemIsNowSelected(item, isSelected)">
+    {{item.text}}
+  </li>
+
+  <li class="new-item">
+    <input type="text" ng-model="list.newItemText">
+  </li>
+</ul>
+
+<button class="btn btn-primary"
+        ng-click="list.addNewItem(); list.deleteSelectedItems();"
+        ng-disabled="!list.newItemText && list.noItemsSelected()">
+  <!-- TODO: could we make this text change according to whether we have a new item or something selected for deletion? -->
+  Lisää/poista pitsoja
+</button>

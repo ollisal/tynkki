@@ -1,0 +1,17 @@
+<div ng-repeat="post in allPosts.posts">
+  <h3>{{post.subject}}</h3>
+  <div class="well">{{post.text}}</div>
+
+  <div class="row">
+    <div class="created-on-column">
+      <i class="fa fa-clock-o"></i>
+      {{post.createdOn | date}}
+    </div>
+    <div class="creator-column">
+      <i class="fa fa-user"></i>
+      {{post.creator}}
+    </div>
+  </div>
+
+  <hr ng-hide="$last">
+</div>

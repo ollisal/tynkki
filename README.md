@@ -45,12 +45,14 @@ to install/uninstall dependency libraries and update the `package.json` file acc
 
 ## `posts` REST API description ##
 
-The server implements a minimal REST API for storing and retrieving posts for the lifetime of the server process.
+The server implements a minimal REST API for storing and retrieving posts for the lifetime of the server process. There are two
+types of posts: a fixed set of persistent posts for the schedule, people etc sections linked from the navigation, and the normal
+posts which can be created and deleted at will. All posts are accessed via the same API but persistent posts have some restrictions.
 *No database is used, so changes are lost when the server is stopped or restarted!*
 
 The available API methods are:
 
-  * `GET /api/posts`: loads minimal version of existing posts, without pizza list content
+  * `GET /api/posts`: loads minimal version of existing posts, without pizza list content. Persistent posts are not returned!
 
 ## Author/contact
 

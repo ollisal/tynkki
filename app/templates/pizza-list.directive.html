@@ -10,7 +10,7 @@
 </ul>
 
 <button class="btn btn-primary"
-        ng-click="list.addNewItem(); list.deleteSelectedItems();"
+        ng-click="list.addNewItem(); list.deleteSelectedItems(); list.onItemsChanged();"
         ng-disabled="!list.newItemText && list.noItemsSelected()">
   <span ng-show="list.newItemText && list.noItemsSelected()">Lisää pitsa</span>
   <span ng-show="!list.newItemText && !list.noItemsSelected()">Poista valitut pitsat</span>

@@ -1,7 +1,7 @@
 <h3>{{ctrl.post.subject}}</h3>
 <div>{{ctrl.post.text}}</div>
 
-<tynkki-pizza-list items="ctrl.post.pizzas"></tynkki-pizza-list>
+<tynkki-pizza-list items="ctrl.post.pizzas" on-items-changed="ctrl.post.$update()"></tynkki-pizza-list>
 
 <!-- TODO: doesn't this look a bit too familiar from post-list.html? -->
 <div class="row">

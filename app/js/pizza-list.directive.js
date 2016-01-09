@@ -15,7 +15,8 @@
       controllerAs: 'list',
       templateUrl: 'templates/pizza-list.directive.html',
       scope: {
-        items: '='
+        items: '=',
+        onItemsChanged: '&',
       },
       bindToController: true
     };

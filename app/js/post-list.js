@@ -19,6 +19,6 @@
   });
 
   m.controller('AllPostsController', function (tynkkiPosts) {
-    this.posts = tynkkiPosts.other;
+    this.posts = tynkkiPosts.query();
   });
 })();

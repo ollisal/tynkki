@@ -4,6 +4,7 @@
 
 var _ = require('lodash');
 var express = require('express');
+var slug = require('slug');
 
 var posts = express.Router();
 
@@ -111,8 +112,60 @@ function postIsPersistent(post) {
 
 posts.route('/')
   .get(function getPosts(req, res) {
-    var nonpersistentPosts = _.reject(storedPosts, postIsPersistent);
-    res.status(200).json(nonpersistentPosts);
+    var nonpersistentPostsWithoutPizzas = _(storedPosts)
+      .reject(postIsPersistent)
+      .map(function omitPizzas(post) {
+        return _.omit(post, 'pizzas');
+      })
+      .value();
+
+    res.status(200).json(nonpersistentPostsWithoutPizzas);
+  })
+  .post(function addPost(req, res) {
+    var newPost = req.body;
+    newPost.id = slug(newPost.subject).toLowerCase();
+
+    if (_.any(storedPosts, 'id', newPost.id)) {
+      res.status(409).json({message: 'Post already exists'});
+      return;
+    }
+
+    var now = new Date();
+    newPost.createdOn = now.toString();
+
+    storedPosts.push(newPost);
+    res.status(201).json(newPost);
+  });
+
+posts.route('/:postId')
+  .all(function findRequestedPost(req, res, next) {
+    var post = _.find(storedPosts, 'id', req.params.postId);
+
+    if (!post) {
+      res.status(404).json({message: 'Post not found'});
+      return;
+    }
+
+    req.post = post;
+    next();
+  })
+  .get(function getPost(req, res) {
+    res.status(200).json(req.post);
+  })
+  .put(function modifyPost(req, res) {
+    var postData = req.body;
+    postData.id = req.params.postId;
+
+    _.assign(req.post, postData);
+    res.status(200).json(req.post);
+  })
+  .delete(function deletePost(req, res) {
+    if (postIsPersistent(req.post)) {
+      res.status(403).json({message: 'Cannot delete persistent posts'});
+    } else {
+      _.pull(storedPosts, req.post);
+      res.status(200).json({id: req.post.id});
+    }
   });
 
 module.exports = posts;

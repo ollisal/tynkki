@@ -6,6 +6,8 @@
  */
 
 var express = require('express');
+var bodyParser = require('body-parser');
+
 var app = express();
 
 /** Serve the frontend to the browser */
@@ -13,6 +15,7 @@ app.use('/', express.static(__dirname + '/../app'));
 app.use('/node_modules', express.static(__dirname + '/../node_modules'));
 
 /** Expose posts REST API */
+app.use(bodyParser.json());
 app.use('/api/posts', require('./posts'));
 
 var server = app.listen(2806, function () {

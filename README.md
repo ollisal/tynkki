@@ -52,7 +52,21 @@ posts which can be created and deleted at will. All posts are accessed via the s
 
 The available API methods are:
 
-  * `GET /api/posts`: loads minimal version of existing posts, without pizza list content. Persistent posts are not returned!
+  * `GET /api/posts/`: loads minimal version of existing posts, without pizza list content. Persistent posts are not returned!
+  * `POST /api/posts/`: creates a new non-persistent post. See below for correct post structure.
+  * `GET /api/posts/:postId`: retrieves full version of an existing post, either persistent or non-persistent, with pizza list content included.
+  * `PUT /api/posts/:postId`: saves a new version of a single post
+  * `DELETE /api/posts/:postId`: deletes a single post. Persistent posts can't be deleted!
+
+Posts are given as JSON objects like:
+
+    {
+      "subject": "Kuivausrummun alapuolella oleva pyykinpesukone rikki",
+      "creator": "Timo porkkana",
+      "text": "Kuului kova ääni ja savu haisi. Älkää siis toistaiseksi käyttäkö sitä. Talonmies tarkistaa tilanteen huomenna.",
+      "id": "kuivausrummun-alapuolella-oleva-pyykinpesukone-rikki",
+      "createdOn": "Sat Jan 09 2016 18:37:11 GMT+0200 (FLE Standard Time)"
+    }
 
 ## Author/contact
 

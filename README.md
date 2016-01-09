@@ -31,8 +31,8 @@ The application code resides in the `app` subdirectory with the following struct
   - `app/scss/_bootstrap-variables.scss`: Settings for adjusting the look'n'feel of Bootstrap
   - `app/build`: Where the build system builds the resulting CSS stylesheet. Do not edit directly!
 
-The `server` subdirectory has a very tiny (<10 lines of code) web server implementation that currently
-just serves the application to the browser at [http://localhost:2806/](http://localhost:2806/).
+The `server` subdirectory has a minimalistic server implementation that serves the application to the browser at
+[http://localhost:2806/](http://localhost:2806/) and implements the `posts` REST API (more details below).
 
 The file `Gulpfile.js` contains the build system for the application. The default task, which can be run
 by executing `gulp` anywhere in the project folder, builds the application's CSS stylesheet from the SCSS sources
@@ -42,6 +42,15 @@ the SCSS source files are changed.
 The `npm` package manager reads project dependencies from the `package.json` file and installs them when you type `npm install`.
 Typically, one doesn't edit this file directly, but uses the `npm install --save <dep>` and `npm uninstall --save <dep>` commands
 to install/uninstall dependency libraries and update the `package.json` file accordingly.
+
+## `posts` REST API description ##
+
+The server implements a minimal REST API for storing and retrieving posts for the lifetime of the server process.
+*No database is used, so changes are lost when the server is stopped or restarted!*
+
+The available API methods are:
+
+  * `GET /api/posts`: loads minimal version of existing posts, without pizza list content
 
 ## Author/contact
 

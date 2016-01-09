@@ -14,6 +14,7 @@ var sourceMaps = require('gulp-sourcemaps');
 var gls = require('gulp-live-server');
 
 var SERVER_MAIN_SCRIPT = 'server/index.js';
+var SERVER_WATCH_PATTERN = 'server/**.js';
 
 var PATHS = {
   BUILD_DIR: 'app/build',
@@ -40,10 +41,10 @@ gulp.task('styles:watch', function () {
 });
 
 gulp.task('serve', ['styles'], function serve() {
-  var server = gls(SERVER_MAIN_SCRIPT, {}, false /* no livereload, would be confusing */);
+  var server = gls(SERVER_MAIN_SCRIPT, {}, false /* no livereload for UI, would be confusing */);
 
   // Restart server if it is changed
-  gulp.watch(SERVER_MAIN_SCRIPT, function restartServer() {
+  gulp.watch(SERVER_WATCH_PATTERN, function restartServer() {
     server.start();
   });
 

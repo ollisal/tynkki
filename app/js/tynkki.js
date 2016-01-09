@@ -8,6 +8,7 @@
     // library dependencies
     'ui.router',
     'ui.bootstrap',
+    'ngResource',
 
     // view modules
     'tynkki.postList',

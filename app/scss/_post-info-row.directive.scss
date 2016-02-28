@@ -6,6 +6,6 @@
 
 .creator-column {
   @include make-xs-column(6);
-  @include make-sm-column(8);
+  @include make-sm-column(6);
   @include make-md-column(9);
 }

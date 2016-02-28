@@ -6,7 +6,8 @@
    */
   var m = angular.module('tynkki.post', [
     'tynkki.services.posts',
-    'tynkki.directives.pizzaList'
+    'tynkki.directives.pizzaList',
+    'tynkki.directives.postInfoRow'
   ]);
 
   // Set up the state with ui-router.

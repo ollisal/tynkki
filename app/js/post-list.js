@@ -5,7 +5,8 @@
    * Module implementing the listing of all posts in the front page.
    */
   var m = angular.module('tynkki.postList', [
-    'tynkki.services.posts'
+    'tynkki.services.posts',
+    'tynkki.directives.postInfoRow'
   ]);
 
   // Set up the state with ui-router.

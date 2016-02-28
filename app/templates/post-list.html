@@ -7,16 +7,7 @@
 
   <div class="well">{{post.text}}</div>
 
-  <div class="row">
-    <div class="created-on-column">
-      <i class="fa fa-clock-o"></i>
-      {{post.createdOn | date}}
-    </div>
-    <div class="creator-column">
-      <i class="fa fa-user"></i>
-      {{post.creator}}
-    </div>
-  </div>
+  <tynkki-post-info-row post="post"></tynkki-post-info-row>
 
   <hr ng-hide="$last">
 </div>

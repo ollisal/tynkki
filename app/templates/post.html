@@ -3,14 +3,4 @@
 
 <tynkki-pizza-list items="ctrl.post.pizzas" on-items-changed="ctrl.post.$update()"></tynkki-pizza-list>
 
-<!-- TODO: doesn't this look a bit too familiar from post-list.html? -->
-<div class="row">
-  <div class="created-on-column" ng-show="ctrl.post.createdOn">
-    <i class="fa fa-clock-o"></i>
-    {{ctrl.post.createdOn | date}}
-  </div>
-  <div class="creator-column" ng-show="ctrl.post.creator">
-    <i class="fa fa-user"></i>
-    {{ctrl.post.creator}}
-  </div>
-</div>
+<tynkki-post-info-row post="ctrl.post" ng-show="ctrl.post.createdOn && ctrl.post.author"></tynkki-post-info-row>

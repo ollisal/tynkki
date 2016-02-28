@@ -5,7 +5,11 @@
 }
 
 .creator-column {
-  @include make-xs-column(6);
-  @include make-sm-column(6);
-  @include make-md-column(9);
+  @include make-xs-column(5);
+  @include make-md-column(6);
+}
+
+.edit-column {
+  @include make-xs-column(1);
+  @include make-sm-column(3);
 }

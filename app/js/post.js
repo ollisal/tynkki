@@ -17,10 +17,25 @@
       controller: 'PostController',
       controllerAs: 'ctrl',
       templateUrl: 'templates/post.html'
+    }).state('editPost', {
+      url: '/editPost/:id',
+      controller: 'EditPostController',
+      controllerAs: 'ctrl',
+      templateUrl: 'templates/edit-post.html'
     });
   });
 
   m.controller('PostController', function ($stateParams, tynkkiPosts) {
     this.post = tynkkiPosts.get({postId: $stateParams.id});
+  });
+
+  m.controller('EditPostController', function ($stateParams, $state, tynkkiPosts) {
+    this.post = tynkkiPosts.get({postId: $stateParams.id});
+
+    this.savePost = function saveEditedPost() {
+      this.post.$update(function () {
+        $state.go('postList');
+      });
+    };
   });
 })();

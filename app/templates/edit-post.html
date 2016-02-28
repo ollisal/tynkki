@@ -1,0 +1,17 @@
+<h3>Muokkaa postausta</h3>
+
+<form ng-submit="ctrl.savePost()">
+  <div class="form-group">
+    <label for="subject">Otsikko</label>
+    <input type="text" class="form-control" id="subject" ng-model="ctrl.post.subject" required>
+  </div>
+  <div class="form-group">
+    <label for="creator">Kirjoittaja</label>
+    <input type="text" class="form-control" id="creator" ng-model="ctrl.post.creator" required>
+  </div>
+  <div class="form-group">
+    <label for="post-text">Sisältö</label>
+    <textarea class="form-control" rows="5" id="post-text" ng-model="ctrl.post.text" required></textarea>
+  </div>
+  <button class="btn btn-primary" type="submit">Tallenna</button>
+</form>

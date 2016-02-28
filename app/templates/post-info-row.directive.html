@@ -7,4 +7,10 @@
     <i class="fa fa-user"></i>
     {{post.creator}}
   </div>
+  <div class="edit-column">
+    <a ui-sref="editPost({id: post.id})">
+      <i class="fa fa-edit"></i>
+      <span class="hidden-xs">Muokkaa</span>
+    </a>
+  </div>
 </div>

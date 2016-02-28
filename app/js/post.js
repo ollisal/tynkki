@@ -22,6 +22,11 @@
       controller: 'EditPostController',
       controllerAs: 'ctrl',
       templateUrl: 'templates/edit-post.html'
+    }).state('newPost', {
+      url: '/newPost',
+      controller: 'NewPostController',
+      controllerAs: 'ctrl',
+      templateUrl: 'templates/edit-post.html'
     });
   });
 
@@ -34,6 +39,16 @@
 
     this.savePost = function saveEditedPost() {
       this.post.$update(function () {
+        $state.go('postList');
+      });
+    };
+  });
+
+  m.controller('NewPostController', function ($stateParams, $state, tynkkiPosts) {
+    this.post = new tynkkiPosts();
+
+    this.savePost = function saveNewPost() {
+      this.post.$save(function () {
         $state.go('postList');
       });
     };
